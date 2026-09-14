@@ -1,0 +1,188 @@
+{
+  "job_id": "JOB-1013",
+  "description": "Storm water through a side door into a mudroom and garage, garage never documented",
+  "loss": {
+    "type": "water",
+    "water_category": 1,
+    "drying_class": 2,
+    "planned_drying_days": 3
+  },
+  "includes_rebuild": false,
+  "areas": [
+    {
+      "area_id": "mudroom",
+      "name": "Mudroom",
+      "floor_sf": 90.0,
+      "ceiling_sf": 90.0,
+      "perimeter_lf": 38.0,
+      "height_ft": 8.0,
+      "affected": {
+        "floor_sf": 90.0,
+        "wall_sf": 76.0,
+        "ceiling_sf": 0.0
+      },
+      "materials": {
+        "floor": "tile",
+        "wall": "drywall"
+      },
+      "scope": [
+        "standing_water",
+        "water_extraction",
+        "dry_structure"
+      ],
+      "note": ""
+    },
+    {
+      "area_id": "garage",
+      "name": "Garage",
+      "floor_sf": 240.0,
+      "ceiling_sf": 240.0,
+      "perimeter_lf": 64.0,
+      "height_ft": 8.0,
+      "affected": {
+        "floor_sf": 240.0,
+        "wall_sf": 0.0,
+        "ceiling_sf": 0.0
+      },
+      "materials": {
+        "floor": "concrete",
+        "wall": "drywall"
+      },
+      "scope": [
+        "water_extraction",
+        "dry_structure"
+      ],
+      "note": "Attached garage on the same slab. Nobody photographed it."
+    }
+  ],
+  "documentation": [
+    {
+      "doc_id": "IMG-13001",
+      "kind": "photo",
+      "area_ids": [
+        "mudroom"
+      ],
+      "tags": [
+        "standing_water",
+        "wet_floor",
+        "tile",
+        "floor",
+        "wall",
+        "wet_drywall",
+        "flood_cut"
+      ]
+    },
+    {
+      "doc_id": "IMG-13002",
+      "kind": "photo",
+      "area_ids": [
+        "mudroom"
+      ],
+      "tags": [
+        "equipment",
+        "air_mover",
+        "dehumidifier"
+      ]
+    },
+    {
+      "doc_id": "MR-13001",
+      "kind": "moisture_reading",
+      "area_ids": [
+        "mudroom"
+      ],
+      "tags": [],
+      "text": "Mudroom wall base 33% WME. No readings taken in the garage."
+    },
+    {
+      "doc_id": "NOTE-13001",
+      "kind": "note",
+      "area_ids": [
+        "mudroom"
+      ],
+      "tags": [],
+      "text": "Storm drove water under the side door. It ran through the mudroom and into the garage."
+    }
+  ],
+  "line_items": [
+    {
+      "line_id": "L01",
+      "code": "MIT-EXT-STD",
+      "area_id": "mudroom",
+      "quantity": 90.0,
+      "unit": "SF",
+      "unit_price": 0.72
+    },
+    {
+      "line_id": "L02",
+      "code": "DEMO-FLR-TILE",
+      "area_id": "mudroom",
+      "quantity": 90.0,
+      "unit": "SF",
+      "unit_price": 2.1
+    },
+    {
+      "line_id": "L03",
+      "code": "DEMO-DRY-2FT",
+      "area_id": "mudroom",
+      "quantity": 76.0,
+      "unit": "SF",
+      "unit_price": 1.85
+    },
+    {
+      "line_id": "L04",
+      "code": "DEMO-INSUL",
+      "area_id": "mudroom",
+      "quantity": 76.0,
+      "unit": "SF",
+      "unit_price": 0.75
+    },
+    {
+      "line_id": "L05",
+      "code": "MIT-EXT-STD",
+      "area_id": "garage",
+      "quantity": 240.0,
+      "unit": "SF",
+      "unit_price": 0.72
+    },
+    {
+      "line_id": "L06",
+      "code": "GEN-CLEAN-FINAL",
+      "area_id": "garage",
+      "quantity": 240.0,
+      "unit": "SF",
+      "unit_price": 0.42
+    },
+    {
+      "line_id": "L07",
+      "code": "MIT-AIRMOVER-DAY",
+      "area_id": null,
+      "quantity": 18.0,
+      "unit": "EA-DAY",
+      "unit_price": 26.0
+    },
+    {
+      "line_id": "L08",
+      "code": "MIT-DEHU-DAY",
+      "area_id": null,
+      "quantity": 9.0,
+      "unit": "EA-DAY",
+      "unit_price": 78.0
+    },
+    {
+      "line_id": "L09",
+      "code": "MIT-MON-VISIT",
+      "area_id": null,
+      "quantity": 3.0,
+      "unit": "EA",
+      "unit_price": 65.0
+    },
+    {
+      "line_id": "L10",
+      "code": "GEN-DEBRIS-HAUL",
+      "area_id": null,
+      "quantity": 1.0,
+      "unit": "EA",
+      "unit_price": 145.0
+    }
+  ]
+}

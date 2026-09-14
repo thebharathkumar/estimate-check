@@ -1,0 +1,159 @@
+{
+  "job_id": "JOB-1009",
+  "description": "Dishwasher overflow, category 2, mitigation only, written correctly",
+  "loss": {
+    "type": "water",
+    "water_category": 2,
+    "drying_class": 2,
+    "planned_drying_days": 3
+  },
+  "includes_rebuild": false,
+  "areas": [
+    {
+      "area_id": "kitchen",
+      "name": "Kitchen",
+      "floor_sf": 165.0,
+      "ceiling_sf": 165.0,
+      "perimeter_lf": 52.0,
+      "height_ft": 8.0,
+      "affected": {
+        "floor_sf": 165.0,
+        "wall_sf": 104.0,
+        "ceiling_sf": 0.0
+      },
+      "materials": {
+        "floor": "vinyl",
+        "wall": "drywall"
+      },
+      "scope": [
+        "standing_water",
+        "water_extraction",
+        "dry_structure"
+      ],
+      "note": ""
+    }
+  ],
+  "documentation": [
+    {
+      "doc_id": "IMG-9001",
+      "kind": "photo",
+      "area_ids": [
+        "kitchen"
+      ],
+      "tags": [
+        "standing_water",
+        "wet_floor",
+        "floor",
+        "wall",
+        "wet_drywall",
+        "flood_cut",
+        "baseboard",
+        "staining"
+      ]
+    },
+    {
+      "doc_id": "IMG-9002",
+      "kind": "photo",
+      "area_ids": [
+        "kitchen"
+      ],
+      "tags": [
+        "equipment",
+        "air_mover",
+        "dehumidifier"
+      ]
+    },
+    {
+      "doc_id": "MR-9001",
+      "kind": "moisture_reading",
+      "area_ids": [
+        "kitchen"
+      ],
+      "tags": [],
+      "text": "Wall base 31% WME at the dishwasher, 19% at the far wall."
+    },
+    {
+      "doc_id": "NOTE-9001",
+      "kind": "note",
+      "area_ids": [
+        "kitchen"
+      ],
+      "tags": [],
+      "text": "Dishwasher drain hose came loose. Category 2 grey water. Antimicrobial applied to the floor and the lower wall after removal."
+    }
+  ],
+  "line_items": [
+    {
+      "line_id": "L01",
+      "code": "MIT-EXT-STD",
+      "area_id": "kitchen",
+      "quantity": 165.0,
+      "unit": "SF",
+      "unit_price": 0.72
+    },
+    {
+      "line_id": "L02",
+      "code": "DEMO-FLR-LAM",
+      "area_id": "kitchen",
+      "quantity": 165.0,
+      "unit": "SF",
+      "unit_price": 1.35
+    },
+    {
+      "line_id": "L03",
+      "code": "DEMO-DRY-2FT",
+      "area_id": "kitchen",
+      "quantity": 104.0,
+      "unit": "SF",
+      "unit_price": 1.85
+    },
+    {
+      "line_id": "L04",
+      "code": "DEMO-BASE",
+      "area_id": "kitchen",
+      "quantity": 52.0,
+      "unit": "LF",
+      "unit_price": 0.95
+    },
+    {
+      "line_id": "L05",
+      "code": "TRT-ANTIMICRO",
+      "area_id": "kitchen",
+      "quantity": 269.0,
+      "unit": "SF",
+      "unit_price": 0.38
+    },
+    {
+      "line_id": "L06",
+      "code": "MIT-AIRMOVER-DAY",
+      "area_id": null,
+      "quantity": 9.0,
+      "unit": "EA-DAY",
+      "unit_price": 26.0
+    },
+    {
+      "line_id": "L07",
+      "code": "MIT-DEHU-DAY",
+      "area_id": null,
+      "quantity": 6.0,
+      "unit": "EA-DAY",
+      "unit_price": 78.0
+    },
+    {
+      "line_id": "L08",
+      "code": "MIT-MON-VISIT",
+      "area_id": null,
+      "quantity": 3.0,
+      "unit": "EA",
+      "unit_price": 65.0
+    },
+    {
+      "line_id": "L09",
+      "code": "GEN-DEBRIS-HAUL",
+      "area_id": null,
+      "quantity": 1.0,
+      "unit": "EA",
+      "unit_price": 145.0
+    }
+  ]
+}

@@ -1,0 +1,294 @@
+{
+  "job_id": "JOB-1004",
+  "description": "Roof leak into two bedrooms, rebuild included, duplicated and out of order lines",
+  "loss": {
+    "type": "water",
+    "water_category": 1,
+    "drying_class": 3,
+    "planned_drying_days": 4
+  },
+  "includes_rebuild": true,
+  "areas": [
+    {
+      "area_id": "bed1",
+      "name": "Bedroom 1",
+      "floor_sf": 168.0,
+      "ceiling_sf": 168.0,
+      "perimeter_lf": 52.0,
+      "height_ft": 8.0,
+      "affected": {
+        "floor_sf": 120.0,
+        "wall_sf": 104.0,
+        "ceiling_sf": 0.0
+      },
+      "materials": {
+        "floor": "carpet",
+        "wall": "drywall",
+        "ceiling": "drywall"
+      },
+      "scope": [
+        "water_extraction",
+        "dry_structure",
+        "ceiling_damage"
+      ],
+      "note": ""
+    },
+    {
+      "area_id": "bed2",
+      "name": "Bedroom 2",
+      "floor_sf": 144.0,
+      "ceiling_sf": 144.0,
+      "perimeter_lf": 48.0,
+      "height_ft": 8.0,
+      "affected": {
+        "floor_sf": 96.0,
+        "wall_sf": 96.0,
+        "ceiling_sf": 0.0
+      },
+      "materials": {
+        "floor": "carpet",
+        "wall": "drywall",
+        "ceiling": "drywall"
+      },
+      "scope": [
+        "dry_structure"
+      ],
+      "note": ""
+    }
+  ],
+  "documentation": [
+    {
+      "doc_id": "IMG-4001",
+      "kind": "photo",
+      "area_ids": [
+        "bed1"
+      ],
+      "tags": [
+        "ceiling_collapse",
+        "wet_drywall",
+        "wall",
+        "staining",
+        "carpet",
+        "floor"
+      ]
+    },
+    {
+      "doc_id": "IMG-4002",
+      "kind": "photo",
+      "area_ids": [
+        "bed2"
+      ],
+      "tags": [
+        "wet_drywall",
+        "wall",
+        "staining",
+        "carpet",
+        "floor",
+        "pad"
+      ]
+    },
+    {
+      "doc_id": "IMG-4003",
+      "kind": "photo",
+      "area_ids": [
+        "bed1",
+        "bed2"
+      ],
+      "tags": [
+        "equipment",
+        "air_mover",
+        "dehumidifier"
+      ]
+    },
+    {
+      "doc_id": "MR-4001",
+      "kind": "moisture_reading",
+      "area_ids": [
+        "bed1",
+        "bed2"
+      ],
+      "tags": [],
+      "text": "Ceiling board saturated in bedroom 1. Bedroom 2 wall base wet along the north wall."
+    },
+    {
+      "doc_id": "NOTE-4001",
+      "kind": "note",
+      "area_ids": [
+        "bed1",
+        "bed2"
+      ],
+      "tags": [],
+      "text": "Storm lifted shingles over the back bedrooms. Rebuild is in scope. Replace drywall, repaint, replace carpet and pad in both rooms."
+    }
+  ],
+  "line_items": [
+    {
+      "line_id": "L01",
+      "code": "MIT-EXT-STD",
+      "area_id": "bed1",
+      "quantity": 120.0,
+      "unit": "SF",
+      "unit_price": 0.72
+    },
+    {
+      "line_id": "L02",
+      "code": "DEMO-FLR-CPT",
+      "area_id": "bed1",
+      "quantity": 120.0,
+      "unit": "SF",
+      "unit_price": 0.58
+    },
+    {
+      "line_id": "L03",
+      "code": "DEMO-FLR-PAD",
+      "area_id": "bed1",
+      "quantity": 120.0,
+      "unit": "SF",
+      "unit_price": 0.44
+    },
+    {
+      "line_id": "L04",
+      "code": "DEMO-DRY-2FT",
+      "area_id": "bed1",
+      "quantity": 104.0,
+      "unit": "SF",
+      "unit_price": 1.85
+    },
+    {
+      "line_id": "L05",
+      "code": "DEMO-DRY-4FT",
+      "area_id": "bed1",
+      "quantity": 208.0,
+      "unit": "SF",
+      "unit_price": 2.2
+    },
+    {
+      "line_id": "L06",
+      "code": "DEMO-BASE",
+      "area_id": "bed1",
+      "quantity": 52.0,
+      "unit": "LF",
+      "unit_price": 0.95
+    },
+    {
+      "line_id": "L07",
+      "code": "RBD-DRY-HANG",
+      "area_id": "bed1",
+      "quantity": 312.0,
+      "unit": "SF",
+      "unit_price": 3.4
+    },
+    {
+      "line_id": "L08",
+      "code": "RBD-PNT-FIN",
+      "area_id": "bed1",
+      "quantity": 416.0,
+      "unit": "SF",
+      "unit_price": 0.95
+    },
+    {
+      "line_id": "L09",
+      "code": "RBD-BASE",
+      "area_id": "bed1",
+      "quantity": 52.0,
+      "unit": "LF",
+      "unit_price": 3.1
+    },
+    {
+      "line_id": "L10",
+      "code": "RBD-FLR-CPT",
+      "area_id": "bed1",
+      "quantity": 168.0,
+      "unit": "SF",
+      "unit_price": 3.75
+    },
+    {
+      "line_id": "L11",
+      "code": "RBD-FLR-PAD",
+      "area_id": "bed1",
+      "quantity": 168.0,
+      "unit": "SF",
+      "unit_price": 0.85
+    },
+    {
+      "line_id": "L12",
+      "code": "RBD-DRY-HANG",
+      "area_id": "bed2",
+      "quantity": 96.0,
+      "unit": "SF",
+      "unit_price": 3.4
+    },
+    {
+      "line_id": "L13",
+      "code": "RBD-PNT-SEAL",
+      "area_id": "bed2",
+      "quantity": 384.0,
+      "unit": "SF",
+      "unit_price": 0.62
+    },
+    {
+      "line_id": "L14",
+      "code": "RBD-PNT-FIN",
+      "area_id": "bed2",
+      "quantity": 384.0,
+      "unit": "SF",
+      "unit_price": 0.95
+    },
+    {
+      "line_id": "L15",
+      "code": "DEMO-FLR-CPT",
+      "area_id": "bed2",
+      "quantity": 96.0,
+      "unit": "SF",
+      "unit_price": 0.58
+    },
+    {
+      "line_id": "L16",
+      "code": "DEMO-FLR-CPT",
+      "area_id": "bed2",
+      "quantity": 96.0,
+      "unit": "SF",
+      "unit_price": 0.58
+    },
+    {
+      "line_id": "L17",
+      "code": "MIT-AIRMOVER-DAY",
+      "area_id": null,
+      "quantity": 16.0,
+      "unit": "EA-DAY",
+      "unit_price": 26.0
+    },
+    {
+      "line_id": "L18",
+      "code": "MIT-DEHU-DAY",
+      "area_id": null,
+      "quantity": 8.0,
+      "unit": "EA-DAY",
+      "unit_price": 78.0
+    },
+    {
+      "line_id": "L19",
+      "code": "MIT-MON-VISIT",
+      "area_id": null,
+      "quantity": 4.0,
+      "unit": "EA",
+      "unit_price": 65.0
+    },
+    {
+      "line_id": "L20",
+      "code": "GEN-DEBRIS-HAUL",
+      "area_id": null,
+      "quantity": 2.0,
+      "unit": "EA",
+      "unit_price": 145.0
+    },
+    {
+      "line_id": "L21",
+      "code": "GEN-CLEAN-FINAL",
+      "area_id": "bed1",
+      "quantity": 168.0,
+      "unit": "SF",
+      "unit_price": 0.42
+    }
+  ]
+}

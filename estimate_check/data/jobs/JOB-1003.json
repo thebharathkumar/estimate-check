@@ -1,0 +1,244 @@
+{
+  "job_id": "JOB-1003",
+  "description": "Toilet supply leak, category 1, rebuild included, quantities written carelessly",
+  "loss": {
+    "type": "water",
+    "water_category": 1,
+    "drying_class": 2,
+    "planned_drying_days": 3
+  },
+  "includes_rebuild": true,
+  "areas": [
+    {
+      "area_id": "bath",
+      "name": "Hall bathroom",
+      "floor_sf": 48.0,
+      "ceiling_sf": 48.0,
+      "perimeter_lf": 28.0,
+      "height_ft": 8.0,
+      "affected": {
+        "floor_sf": 48.0,
+        "wall_sf": 56.0,
+        "ceiling_sf": 0.0
+      },
+      "materials": {
+        "floor": "tile",
+        "wall": "drywall"
+      },
+      "scope": [
+        "standing_water",
+        "water_extraction",
+        "dry_structure"
+      ],
+      "note": ""
+    },
+    {
+      "area_id": "bedroom",
+      "name": "Bedroom 2",
+      "floor_sf": 156.0,
+      "ceiling_sf": 156.0,
+      "perimeter_lf": 50.0,
+      "height_ft": 8.0,
+      "affected": {
+        "floor_sf": 156.0,
+        "wall_sf": 0.0,
+        "ceiling_sf": 0.0
+      },
+      "materials": {
+        "floor": "laminate",
+        "wall": "drywall"
+      },
+      "scope": [
+        "water_extraction",
+        "dry_structure"
+      ],
+      "note": ""
+    }
+  ],
+  "documentation": [
+    {
+      "doc_id": "IMG-3001",
+      "kind": "photo",
+      "area_ids": [
+        "bath"
+      ],
+      "tags": [
+        "standing_water",
+        "wet_floor",
+        "tile",
+        "floor",
+        "wall",
+        "flood_cut"
+      ]
+    },
+    {
+      "doc_id": "IMG-3002",
+      "kind": "photo",
+      "area_ids": [
+        "bedroom"
+      ],
+      "tags": [
+        "wet_floor",
+        "floor",
+        "laminate",
+        "buckled_floor",
+        "wall"
+      ]
+    },
+    {
+      "doc_id": "IMG-3003",
+      "kind": "photo",
+      "area_ids": [
+        "bath",
+        "bedroom"
+      ],
+      "tags": [
+        "equipment",
+        "air_mover",
+        "dehumidifier"
+      ]
+    },
+    {
+      "doc_id": "MR-3001",
+      "kind": "moisture_reading",
+      "area_ids": [
+        "bath",
+        "bedroom"
+      ],
+      "tags": [],
+      "text": "Bathroom wall base wet to 20 inches. Bedroom laminate cupped along the shared wall."
+    },
+    {
+      "doc_id": "NOTE-3001",
+      "kind": "note",
+      "area_ids": [
+        "bath",
+        "bedroom"
+      ],
+      "tags": [],
+      "text": "Toilet supply line let go while the owners were out. Rebuild is in scope on this job. Replace flooring and repaint both rooms."
+    }
+  ],
+  "line_items": [
+    {
+      "line_id": "L01",
+      "code": "MIT-EXT-STD",
+      "area_id": "bath",
+      "quantity": 48.0,
+      "unit": "LF",
+      "unit_price": 0.72
+    },
+    {
+      "line_id": "L02",
+      "code": "MIT-EXT-STD",
+      "area_id": "bedroom",
+      "quantity": 156.0,
+      "unit": "SF",
+      "unit_price": 0.72
+    },
+    {
+      "line_id": "L03",
+      "code": "DEMO-FLR-TILE",
+      "area_id": "bath",
+      "quantity": 48.0,
+      "unit": "SF",
+      "unit_price": 2.1
+    },
+    {
+      "line_id": "L04",
+      "code": "DEMO-FLR-LAM",
+      "area_id": "bedroom",
+      "quantity": 156.0,
+      "unit": "SF",
+      "unit_price": 1.35
+    },
+    {
+      "line_id": "L05",
+      "code": "DEMO-DRY-2FT",
+      "area_id": "bath",
+      "quantity": 112.0,
+      "unit": "SF",
+      "unit_price": 1.85
+    },
+    {
+      "line_id": "L06",
+      "code": "DEMO-BASE",
+      "area_id": "bath",
+      "quantity": 28.0,
+      "unit": "LF",
+      "unit_price": 0.95
+    },
+    {
+      "line_id": "L07",
+      "code": "DEMO-BASE",
+      "area_id": "bedroom",
+      "quantity": 50.0,
+      "unit": "LF",
+      "unit_price": 0.95
+    },
+    {
+      "line_id": "L08",
+      "code": "RBD-FLR-LAM",
+      "area_id": "bedroom",
+      "quantity": 174.7,
+      "unit": "SF",
+      "unit_price": 4.2
+    },
+    {
+      "line_id": "L09",
+      "code": "RBD-BASE",
+      "area_id": "bath",
+      "quantity": 28.0,
+      "unit": "LF",
+      "unit_price": 3.1
+    },
+    {
+      "line_id": "L10",
+      "code": "RBD-BASE",
+      "area_id": "bedroom",
+      "quantity": 50.0,
+      "unit": "LF",
+      "unit_price": 3.1
+    },
+    {
+      "line_id": "L11",
+      "code": "MIT-AIRMOVER-DAY",
+      "area_id": null,
+      "quantity": 12.0,
+      "unit": "EA-DAY",
+      "unit_price": 26.0
+    },
+    {
+      "line_id": "L12",
+      "code": "MIT-DEHU-DAY",
+      "area_id": null,
+      "quantity": 6.0,
+      "unit": "EA-DAY",
+      "unit_price": 78.0
+    },
+    {
+      "line_id": "L13",
+      "code": "MIT-MON-VISIT",
+      "area_id": null,
+      "quantity": 3.0,
+      "unit": "EA",
+      "unit_price": 65.0
+    },
+    {
+      "line_id": "L14",
+      "code": "GEN-DEBRIS-HAUL",
+      "area_id": null,
+      "quantity": 1.0,
+      "unit": "EA",
+      "unit_price": 145.0
+    },
+    {
+      "line_id": "L15",
+      "code": "GEN-CLEAN-FINAL",
+      "area_id": "bedroom",
+      "quantity": 156.0,
+      "unit": "SF",
+      "unit_price": 0.42
+    }
+  ]
+}

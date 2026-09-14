@@ -1,0 +1,262 @@
+{
+  "job_id": "JOB-1005",
+  "description": "Water heater failure in a finished basement, photos partly unassigned",
+  "loss": {
+    "type": "water",
+    "water_category": 1,
+    "drying_class": 3,
+    "planned_drying_days": 4
+  },
+  "includes_rebuild": false,
+  "areas": [
+    {
+      "area_id": "mechanical",
+      "name": "Mechanical room",
+      "floor_sf": 80.0,
+      "ceiling_sf": 80.0,
+      "perimeter_lf": 36.0,
+      "height_ft": 8.0,
+      "affected": {
+        "floor_sf": 80.0,
+        "wall_sf": 72.0,
+        "ceiling_sf": 0.0
+      },
+      "materials": {
+        "floor": "concrete",
+        "wall": "drywall"
+      },
+      "scope": [
+        "standing_water",
+        "water_extraction",
+        "dry_structure"
+      ],
+      "note": ""
+    },
+    {
+      "area_id": "rec_room",
+      "name": "Rec room",
+      "floor_sf": 320.0,
+      "ceiling_sf": 320.0,
+      "perimeter_lf": 74.0,
+      "height_ft": 8.0,
+      "affected": {
+        "floor_sf": 210.0,
+        "wall_sf": 0.0,
+        "ceiling_sf": 0.0
+      },
+      "materials": {
+        "floor": "carpet",
+        "wall": "drywall"
+      },
+      "scope": [
+        "water_extraction",
+        "dry_structure"
+      ],
+      "note": ""
+    },
+    {
+      "area_id": "stairs",
+      "name": "Basement stairs",
+      "floor_sf": 44.0,
+      "ceiling_sf": 44.0,
+      "perimeter_lf": 30.0,
+      "height_ft": 8.0,
+      "affected": {
+        "floor_sf": 44.0,
+        "wall_sf": 0.0,
+        "ceiling_sf": 0.0
+      },
+      "materials": {
+        "floor": "carpet",
+        "wall": "drywall"
+      },
+      "scope": [
+        "water_extraction"
+      ],
+      "note": "Carpeted stair run between the rec room and the main floor."
+    }
+  ],
+  "documentation": [
+    {
+      "doc_id": "IMG-5001",
+      "kind": "photo",
+      "area_ids": [
+        "mechanical"
+      ],
+      "tags": [
+        "standing_water",
+        "wet_floor",
+        "floor",
+        "wall",
+        "flood_cut",
+        "wet_drywall"
+      ]
+    },
+    {
+      "doc_id": "IMG-5002",
+      "kind": "photo",
+      "area_ids": [
+        "rec_room"
+      ],
+      "tags": [
+        "saturated_carpet",
+        "carpet",
+        "floor",
+        "pad",
+        "wall"
+      ]
+    },
+    {
+      "doc_id": "IMG-5003",
+      "kind": "photo",
+      "area_ids": [
+        "mechanical",
+        "rec_room"
+      ],
+      "tags": [
+        "equipment",
+        "air_mover",
+        "dehumidifier"
+      ]
+    },
+    {
+      "doc_id": "IMG-5004",
+      "kind": "photo",
+      "area_ids": [],
+      "tags": [
+        "carpet",
+        "saturated_carpet",
+        "floor"
+      ],
+      "text": "Basement stairs, carpet saturated on the bottom four treads. Camera had no room set."
+    },
+    {
+      "doc_id": "IMG-5005",
+      "kind": "photo",
+      "area_ids": [],
+      "tags": [
+        "carpet",
+        "pad"
+      ],
+      "text": "Second shot of the basement stairs carpet and pad."
+    },
+    {
+      "doc_id": "MR-5001",
+      "kind": "moisture_reading",
+      "area_ids": [
+        "mechanical",
+        "rec_room"
+      ],
+      "tags": [],
+      "text": "Mechanical room wall base 38% WME. Rec room carpet saturated across the north half."
+    },
+    {
+      "doc_id": "NOTE-5001",
+      "kind": "note",
+      "area_ids": [
+        "mechanical",
+        "rec_room"
+      ],
+      "tags": [],
+      "text": "Water heater tank split. Water ran across the mechanical room and into the rec room and down the stair run."
+    }
+  ],
+  "line_items": [
+    {
+      "line_id": "L01",
+      "code": "MIT-EXT-STD",
+      "area_id": "mechanical",
+      "quantity": 80.0,
+      "unit": "SF",
+      "unit_price": 0.72
+    },
+    {
+      "line_id": "L02",
+      "code": "MIT-EXT-STD",
+      "area_id": "rec_room",
+      "quantity": 210.0,
+      "unit": "SF",
+      "unit_price": 0.72
+    },
+    {
+      "line_id": "L03",
+      "code": "MIT-EXT-STD",
+      "area_id": "stairs",
+      "quantity": 44.0,
+      "unit": "SF",
+      "unit_price": 0.72
+    },
+    {
+      "line_id": "L04",
+      "code": "DEMO-FLR-CPT",
+      "area_id": "rec_room",
+      "quantity": 210.0,
+      "unit": "SF",
+      "unit_price": 0.58
+    },
+    {
+      "line_id": "L05",
+      "code": "DEMO-FLR-PAD",
+      "area_id": "rec_room",
+      "quantity": 210.0,
+      "unit": "SF",
+      "unit_price": 0.44
+    },
+    {
+      "line_id": "L06",
+      "code": "DEMO-FLR-CPT",
+      "area_id": "stairs",
+      "quantity": 44.0,
+      "unit": "SF",
+      "unit_price": 0.58
+    },
+    {
+      "line_id": "L07",
+      "code": "DEMO-FLR-PAD",
+      "area_id": "stairs",
+      "quantity": 44.0,
+      "unit": "SF",
+      "unit_price": 0.44
+    },
+    {
+      "line_id": "L08",
+      "code": "DEMO-DRY-2FT",
+      "area_id": "mechanical",
+      "quantity": 72.0,
+      "unit": "SF",
+      "unit_price": 1.85
+    },
+    {
+      "line_id": "L09",
+      "code": "MIT-AIRMOVER-DAY",
+      "area_id": null,
+      "quantity": 24.0,
+      "unit": "EA-DAY",
+      "unit_price": 26.0
+    },
+    {
+      "line_id": "L10",
+      "code": "MIT-DEHU-DAY",
+      "area_id": null,
+      "quantity": 12.0,
+      "unit": "EA-DAY",
+      "unit_price": 78.0
+    },
+    {
+      "line_id": "L11",
+      "code": "MIT-MON-VISIT",
+      "area_id": null,
+      "quantity": 4.0,
+      "unit": "EA",
+      "unit_price": 65.0
+    },
+    {
+      "line_id": "L12",
+      "code": "GEN-DEBRIS-HAUL",
+      "area_id": null,
+      "quantity": 2.0,
+      "unit": "EA",
+      "unit_price": 145.0
+    }
+  ]
+}
