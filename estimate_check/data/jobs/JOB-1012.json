@@ -1,0 +1,86 @@
+{
+  "job_id": "JOB-1012",
+  "description": "Overflowed sink in a powder room, category 1, small and clean",
+  "loss": {
+    "type": "water",
+    "water_category": 1,
+    "drying_class": 1,
+    "planned_drying_days": 0
+  },
+  "includes_rebuild": false,
+  "areas": [
+    {
+      "area_id": "powder",
+      "name": "Powder room",
+      "floor_sf": 24.0,
+      "ceiling_sf": 24.0,
+      "perimeter_lf": 20.0,
+      "height_ft": 8.0,
+      "affected": {
+        "floor_sf": 24.0,
+        "wall_sf": 0.0,
+        "ceiling_sf": 0.0
+      },
+      "materials": {
+        "floor": "tile",
+        "wall": "drywall"
+      },
+      "scope": [
+        "standing_water",
+        "water_extraction"
+      ],
+      "note": ""
+    }
+  ],
+  "documentation": [
+    {
+      "doc_id": "IMG-12001",
+      "kind": "photo",
+      "area_ids": [
+        "powder"
+      ],
+      "tags": [
+        "standing_water",
+        "wet_floor",
+        "tile",
+        "floor"
+      ]
+    },
+    {
+      "doc_id": "MR-12001",
+      "kind": "moisture_reading",
+      "area_ids": [
+        "powder"
+      ],
+      "tags": [],
+      "text": "Tile and grout wet, wall base dry."
+    },
+    {
+      "doc_id": "NOTE-12001",
+      "kind": "note",
+      "area_ids": [
+        "powder"
+      ],
+      "tags": [],
+      "text": "Sink overflowed while the tap was left running. Water stayed on the tile. Walls read dry."
+    }
+  ],
+  "line_items": [
+    {
+      "line_id": "L01",
+      "code": "MIT-EXT-STD",
+      "area_id": "powder",
+      "quantity": 24.0,
+      "unit": "SF",
+      "unit_price": 0.72
+    },
+    {
+      "line_id": "L02",
+      "code": "GEN-CLEAN-FINAL",
+      "area_id": "powder",
+      "quantity": 24.0,
+      "unit": "SF",
+      "unit_price": 0.42
+    }
+  ]
+}

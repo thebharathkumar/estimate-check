@@ -1,0 +1,199 @@
+{
+  "job_id": "JOB-1008",
+  "description": "Refrigerator line leak, one open room measured twice under two names",
+  "loss": {
+    "type": "water",
+    "water_category": 1,
+    "drying_class": 2,
+    "planned_drying_days": 3
+  },
+  "includes_rebuild": false,
+  "areas": [
+    {
+      "area_id": "kitchen",
+      "name": "Kitchen",
+      "floor_sf": 190.0,
+      "ceiling_sf": 190.0,
+      "perimeter_lf": 56.0,
+      "height_ft": 8.0,
+      "affected": {
+        "floor_sf": 190.0,
+        "wall_sf": 112.0,
+        "ceiling_sf": 0.0
+      },
+      "materials": {
+        "floor": "tile",
+        "wall": "drywall"
+      },
+      "scope": [
+        "standing_water",
+        "water_extraction",
+        "dry_structure"
+      ],
+      "note": "Open plan. The kitchen and the dining half share one floor with no wall between them."
+    },
+    {
+      "area_id": "kitchen_dining",
+      "name": "Kitchen and dining",
+      "floor_sf": 190.0,
+      "ceiling_sf": 190.0,
+      "perimeter_lf": 56.0,
+      "height_ft": 8.0,
+      "affected": {
+        "floor_sf": 190.0,
+        "wall_sf": 112.0,
+        "ceiling_sf": 0.0
+      },
+      "materials": {
+        "floor": "tile",
+        "wall": "drywall"
+      },
+      "scope": [
+        "standing_water",
+        "water_extraction",
+        "dry_structure"
+      ],
+      "note": "Same floor area as kitchen above, entered a second time by a different tech."
+    }
+  ],
+  "documentation": [
+    {
+      "doc_id": "IMG-8001",
+      "kind": "photo",
+      "area_ids": [
+        "kitchen"
+      ],
+      "tags": [
+        "standing_water",
+        "wet_floor",
+        "tile",
+        "floor",
+        "wall",
+        "wet_drywall",
+        "flood_cut",
+        "containment",
+        "barrier"
+      ]
+    },
+    {
+      "doc_id": "IMG-8002",
+      "kind": "photo",
+      "area_ids": [
+        "kitchen_dining"
+      ],
+      "tags": [
+        "wet_floor",
+        "tile",
+        "floor",
+        "wall",
+        "wet_drywall"
+      ]
+    },
+    {
+      "doc_id": "IMG-8003",
+      "kind": "photo",
+      "area_ids": [
+        "kitchen"
+      ],
+      "tags": [
+        "equipment",
+        "air_mover",
+        "dehumidifier"
+      ]
+    },
+    {
+      "doc_id": "MR-8001",
+      "kind": "moisture_reading",
+      "area_ids": [
+        "kitchen",
+        "kitchen_dining"
+      ],
+      "tags": [],
+      "text": "Wall base wet to 16 inches along the exterior wall."
+    },
+    {
+      "doc_id": "NOTE-8001",
+      "kind": "note",
+      "area_ids": [
+        "kitchen",
+        "kitchen_dining"
+      ],
+      "tags": [],
+      "text": "Ice maker line let go behind the refrigerator. Two techs sketched the same open room, so the kitchen appears twice in the measurements. Poly containment at the dining opening."
+    }
+  ],
+  "line_items": [
+    {
+      "line_id": "L01",
+      "code": "MIT-EXT-STD",
+      "area_id": "kitchen",
+      "quantity": 190.0,
+      "unit": "SF",
+      "unit_price": 0.72
+    },
+    {
+      "line_id": "L02",
+      "code": "MIT-EXT-STD",
+      "area_id": "kitchen_dining",
+      "quantity": 190.0,
+      "unit": "SF",
+      "unit_price": 0.72
+    },
+    {
+      "line_id": "L03",
+      "code": "DEMO-FLR-TILE",
+      "area_id": "kitchen",
+      "quantity": 190.0,
+      "unit": "SF",
+      "unit_price": 2.1
+    },
+    {
+      "line_id": "L04",
+      "code": "DEMO-DRY-2FT",
+      "area_id": "kitchen",
+      "quantity": 112.0,
+      "unit": "SF",
+      "unit_price": 1.85
+    },
+    {
+      "line_id": "L05",
+      "code": "GEN-CONTAIN-BARRIER",
+      "area_id": "kitchen",
+      "quantity": 640.0,
+      "unit": "SF",
+      "unit_price": 1.2
+    },
+    {
+      "line_id": "L06",
+      "code": "MIT-AIRMOVER-DAY",
+      "area_id": null,
+      "quantity": 21.0,
+      "unit": "EA-DAY",
+      "unit_price": 26.0
+    },
+    {
+      "line_id": "L07",
+      "code": "MIT-DEHU-DAY",
+      "area_id": null,
+      "quantity": 9.0,
+      "unit": "EA-DAY",
+      "unit_price": 78.0
+    },
+    {
+      "line_id": "L08",
+      "code": "MIT-MON-VISIT",
+      "area_id": null,
+      "quantity": 3.0,
+      "unit": "EA",
+      "unit_price": 65.0
+    },
+    {
+      "line_id": "L09",
+      "code": "GEN-DEBRIS-HAUL",
+      "area_id": null,
+      "quantity": 1.0,
+      "unit": "EA",
+      "unit_price": 145.0
+    }
+  ]
+}

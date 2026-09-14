@@ -1,0 +1,215 @@
+{
+  "job_id": "JOB-1001",
+  "description": "Supply line under a kitchen sink, category 1, mitigation only, written correctly",
+  "loss": {
+    "type": "water",
+    "water_category": 1,
+    "drying_class": 2,
+    "planned_drying_days": 3
+  },
+  "includes_rebuild": false,
+  "areas": [
+    {
+      "area_id": "kitchen",
+      "name": "Kitchen",
+      "floor_sf": 180.0,
+      "ceiling_sf": 180.0,
+      "perimeter_lf": 54.0,
+      "height_ft": 8.0,
+      "affected": {
+        "floor_sf": 180.0,
+        "wall_sf": 108.0,
+        "ceiling_sf": 0.0
+      },
+      "materials": {
+        "floor": "laminate",
+        "wall": "drywall"
+      },
+      "scope": [
+        "standing_water",
+        "water_extraction",
+        "dry_structure"
+      ],
+      "note": ""
+    },
+    {
+      "area_id": "hall",
+      "name": "Hall",
+      "floor_sf": 60.0,
+      "ceiling_sf": 60.0,
+      "perimeter_lf": 34.0,
+      "height_ft": 8.0,
+      "affected": {
+        "floor_sf": 60.0,
+        "wall_sf": 0.0,
+        "ceiling_sf": 0.0
+      },
+      "materials": {
+        "floor": "laminate",
+        "wall": "drywall"
+      },
+      "scope": [
+        "water_extraction",
+        "dry_structure"
+      ],
+      "note": ""
+    }
+  ],
+  "documentation": [
+    {
+      "doc_id": "IMG-1001",
+      "kind": "photo",
+      "area_ids": [
+        "kitchen"
+      ],
+      "tags": [
+        "standing_water",
+        "wet_floor",
+        "floor",
+        "laminate"
+      ],
+      "captured_at": "2026-02-03T08:12:00Z"
+    },
+    {
+      "doc_id": "IMG-1002",
+      "kind": "photo",
+      "area_ids": [
+        "kitchen"
+      ],
+      "tags": [
+        "equipment",
+        "air_mover",
+        "dehumidifier"
+      ],
+      "captured_at": "2026-02-03T11:40:00Z"
+    },
+    {
+      "doc_id": "IMG-1003",
+      "kind": "photo",
+      "area_ids": [
+        "hall"
+      ],
+      "tags": [
+        "wet_floor",
+        "floor",
+        "laminate"
+      ],
+      "captured_at": "2026-02-03T08:20:00Z"
+    },
+    {
+      "doc_id": "IMG-1004",
+      "kind": "photo",
+      "area_ids": [
+        "kitchen"
+      ],
+      "tags": [
+        "baseboard",
+        "wall",
+        "flood_cut"
+      ],
+      "captured_at": "2026-02-03T10:05:00Z"
+    },
+    {
+      "doc_id": "MR-1001",
+      "kind": "moisture_reading",
+      "area_ids": [
+        "kitchen",
+        "hall"
+      ],
+      "tags": [],
+      "text": "Kitchen subfloor 28% WME, hall 22% WME at first reading."
+    },
+    {
+      "doc_id": "NOTE-1001",
+      "kind": "note",
+      "area_ids": [
+        "kitchen",
+        "hall"
+      ],
+      "tags": [],
+      "text": "Braided supply line under the sink failed overnight. Water travelled into the hall. Laminate is cupped in both rooms. Equipment set on day one."
+    }
+  ],
+  "line_items": [
+    {
+      "line_id": "L01",
+      "code": "MIT-EXT-STD",
+      "area_id": "kitchen",
+      "quantity": 180.0,
+      "unit": "SF",
+      "unit_price": 0.72
+    },
+    {
+      "line_id": "L02",
+      "code": "MIT-EXT-STD",
+      "area_id": "hall",
+      "quantity": 60.0,
+      "unit": "SF",
+      "unit_price": 0.72
+    },
+    {
+      "line_id": "L03",
+      "code": "DEMO-FLR-LAM",
+      "area_id": "kitchen",
+      "quantity": 180.0,
+      "unit": "SF",
+      "unit_price": 1.35
+    },
+    {
+      "line_id": "L04",
+      "code": "DEMO-FLR-LAM",
+      "area_id": "hall",
+      "quantity": 60.0,
+      "unit": "SF",
+      "unit_price": 1.35
+    },
+    {
+      "line_id": "L05",
+      "code": "DEMO-BASE",
+      "area_id": "kitchen",
+      "quantity": 54.0,
+      "unit": "LF",
+      "unit_price": 0.95
+    },
+    {
+      "line_id": "L06",
+      "code": "DEMO-DRY-2FT",
+      "area_id": "kitchen",
+      "quantity": 108.0,
+      "unit": "SF",
+      "unit_price": 1.85
+    },
+    {
+      "line_id": "L07",
+      "code": "MIT-AIRMOVER-DAY",
+      "area_id": null,
+      "quantity": 12.0,
+      "unit": "EA-DAY",
+      "unit_price": 26.0
+    },
+    {
+      "line_id": "L08",
+      "code": "MIT-DEHU-DAY",
+      "area_id": null,
+      "quantity": 6.0,
+      "unit": "EA-DAY",
+      "unit_price": 78.0
+    },
+    {
+      "line_id": "L09",
+      "code": "MIT-MON-VISIT",
+      "area_id": null,
+      "quantity": 3.0,
+      "unit": "EA",
+      "unit_price": 65.0
+    },
+    {
+      "line_id": "L10",
+      "code": "GEN-DEBRIS-HAUL",
+      "area_id": null,
+      "quantity": 1.0,
+      "unit": "EA",
+      "unit_price": 145.0
+    }
+  ]
+}

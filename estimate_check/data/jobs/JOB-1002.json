@@ -1,0 +1,176 @@
+{
+  "job_id": "JOB-1002",
+  "description": "Washing machine overflow, category 2, mitigation only, several missed line items",
+  "loss": {
+    "type": "water",
+    "water_category": 2,
+    "drying_class": 2,
+    "planned_drying_days": 4
+  },
+  "includes_rebuild": false,
+  "areas": [
+    {
+      "area_id": "laundry",
+      "name": "Laundry room",
+      "floor_sf": 64.0,
+      "ceiling_sf": 64.0,
+      "perimeter_lf": 32.0,
+      "height_ft": 8.0,
+      "affected": {
+        "floor_sf": 64.0,
+        "wall_sf": 64.0,
+        "ceiling_sf": 0.0
+      },
+      "materials": {
+        "floor": "vinyl",
+        "wall": "drywall"
+      },
+      "scope": [
+        "standing_water",
+        "water_extraction",
+        "dry_structure"
+      ],
+      "note": ""
+    },
+    {
+      "area_id": "hallway",
+      "name": "Hallway",
+      "floor_sf": 90.0,
+      "ceiling_sf": 90.0,
+      "perimeter_lf": 38.0,
+      "height_ft": 8.0,
+      "affected": {
+        "floor_sf": 90.0,
+        "wall_sf": 0.0,
+        "ceiling_sf": 0.0
+      },
+      "materials": {
+        "floor": "carpet",
+        "wall": "drywall"
+      },
+      "scope": [
+        "water_extraction",
+        "dry_structure"
+      ],
+      "note": ""
+    }
+  ],
+  "documentation": [
+    {
+      "doc_id": "IMG-2001",
+      "kind": "photo",
+      "area_ids": [
+        "laundry"
+      ],
+      "tags": [
+        "standing_water",
+        "wet_floor",
+        "floor",
+        "wall",
+        "flood_cut"
+      ]
+    },
+    {
+      "doc_id": "IMG-2002",
+      "kind": "photo",
+      "area_ids": [
+        "hallway"
+      ],
+      "tags": [
+        "saturated_carpet",
+        "carpet",
+        "floor"
+      ]
+    },
+    {
+      "doc_id": "IMG-2003",
+      "kind": "photo",
+      "area_ids": [
+        "laundry"
+      ],
+      "tags": [
+        "equipment",
+        "air_mover",
+        "dehumidifier"
+      ]
+    },
+    {
+      "doc_id": "MR-2001",
+      "kind": "moisture_reading",
+      "area_ids": [
+        "laundry",
+        "hallway"
+      ],
+      "tags": [],
+      "text": "Laundry wall base 34% WME. Hallway carpet saturated to the doorway."
+    },
+    {
+      "doc_id": "NOTE-2001",
+      "kind": "note",
+      "area_ids": [
+        "laundry",
+        "hallway"
+      ],
+      "tags": [],
+      "text": "Supply hose to the washer burst. Category 2 grey water. Carpet in the hallway is saturated across the full width."
+    }
+  ],
+  "line_items": [
+    {
+      "line_id": "L01",
+      "code": "MIT-EXT-STD",
+      "area_id": "laundry",
+      "quantity": 64.0,
+      "unit": "SF",
+      "unit_price": 0.72
+    },
+    {
+      "line_id": "L02",
+      "code": "MIT-EXT-STD",
+      "area_id": "hallway",
+      "quantity": 90.0,
+      "unit": "SF",
+      "unit_price": 0.72
+    },
+    {
+      "line_id": "L03",
+      "code": "DEMO-FLR-CPT",
+      "area_id": "hallway",
+      "quantity": 90.0,
+      "unit": "SF",
+      "unit_price": 0.58
+    },
+    {
+      "line_id": "L04",
+      "code": "DEMO-DRY-2FT",
+      "area_id": "laundry",
+      "quantity": 64.0,
+      "unit": "SF",
+      "unit_price": 1.85
+    },
+    {
+      "line_id": "L05",
+      "code": "MIT-AIRMOVER-DAY",
+      "area_id": null,
+      "quantity": 12.0,
+      "unit": "EA-DAY",
+      "unit_price": 26.0
+    },
+    {
+      "line_id": "L06",
+      "code": "MIT-DEHU-DAY",
+      "area_id": null,
+      "quantity": 8.0,
+      "unit": "EA-DAY",
+      "unit_price": 78.0
+    },
+    {
+      "line_id": "L07",
+      "code": "GEN-DEBRIS-HAUL",
+      "area_id": null,
+      "quantity": 1.0,
+      "unit": "EA",
+      "unit_price": 145.0
+    }
+  ]
+}

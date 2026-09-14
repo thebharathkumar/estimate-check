@@ -1,0 +1,240 @@
+{
+  "seed_set_id": "seed-v1",
+  "labelled_by": "the author of this repository, who has not worked in restoration",
+  "protocol": "Every job in data/jobs is invented. The labels below are what a careful reviewer should raise on those jobs, written by reading each job against the synthetic rule pack rather than by reading the detector output. A label with rule_id \"none\" describes a finding no rule in the pack can produce; it is counted as a false negative on purpose. A finding matches a label when job_id, detector, area_id, rule_id and target are all equal.",
+  "caveat": "The same person wrote the detectors and these labels, and the set is far too small to estimate precision or recall reliably. Read the counts, not the ratios.",
+  "labels": [
+    {
+      "job_id": "JOB-1002",
+      "detector": "missing_required",
+      "area_id": "laundry",
+      "rule_id": "REQ-002",
+      "target": "TRT-ANTIMICRO",
+      "note": "Category 2 loss with drywall removal in this room and no antimicrobial billed."
+    },
+    {
+      "job_id": "JOB-1002",
+      "detector": "missing_required",
+      "area_id": "hallway",
+      "rule_id": "REQ-002",
+      "target": "TRT-ANTIMICRO",
+      "note": "Category 2 loss with carpet removal in this room and no antimicrobial billed."
+    },
+    {
+      "job_id": "JOB-1002",
+      "detector": "missing_required",
+      "area_id": "",
+      "rule_id": "REQ-004",
+      "target": "MIT-MON-VISIT",
+      "note": "Four days of equipment billed with no monitoring visits."
+    },
+    {
+      "job_id": "JOB-1002",
+      "detector": "missing_required",
+      "area_id": "hallway",
+      "rule_id": "REQ-006",
+      "target": "DEMO-FLR-PAD",
+      "note": "Carpet came out, the pad under it did not get billed."
+    },
+    {
+      "job_id": "JOB-1003",
+      "detector": "missing_required",
+      "area_id": "bath",
+      "rule_id": "REQ-007",
+      "target": "RBD-DRY-HANG",
+      "note": "Drywall came out of the bathroom on a rebuild job and nothing puts it back."
+    },
+    {
+      "job_id": "JOB-1003",
+      "detector": "missing_required",
+      "area_id": "bath",
+      "rule_id": "REQ-010",
+      "target": "RBD-FLR-LAM",
+      "note": "Tile floor came out on a rebuild job and nothing replaces it."
+    },
+    {
+      "job_id": "JOB-1003",
+      "detector": "quantity_mismatch",
+      "area_id": "bath",
+      "rule_id": "QTY-001",
+      "target": "L05",
+      "note": "2 ft flood cut billed at 112 SF against a 28 LF perimeter, which is a 4 ft cut quantity."
+    },
+    {
+      "job_id": "JOB-1003",
+      "detector": "quantity_mismatch",
+      "area_id": "bath",
+      "rule_id": "QTY-002",
+      "target": "L01",
+      "note": "Extraction billed in LF. This code is a surface area code."
+    },
+    {
+      "job_id": "JOB-1004",
+      "detector": "duplicate_scope",
+      "area_id": "bed2",
+      "rule_id": "DUP-001",
+      "target": "L16",
+      "note": "Carpet removal billed twice in bedroom 2."
+    },
+    {
+      "job_id": "JOB-1004",
+      "detector": "duplicate_scope",
+      "area_id": "bed1",
+      "rule_id": "DUP-002",
+      "target": "L05",
+      "note": "A 2 ft and a 4 ft flood cut are both billed in bedroom 1."
+    },
+    {
+      "job_id": "JOB-1004",
+      "detector": "missing_required",
+      "area_id": "bed2",
+      "rule_id": "REQ-006",
+      "target": "DEMO-FLR-PAD",
+      "note": "Carpet removal in bedroom 2 with no pad removal."
+    },
+    {
+      "job_id": "JOB-1004",
+      "detector": "missing_required",
+      "area_id": "bed2",
+      "rule_id": "REQ-010",
+      "target": "RBD-FLR-LAM",
+      "note": "Carpet came out of bedroom 2 on a rebuild job and nothing replaces it."
+    },
+    {
+      "job_id": "JOB-1004",
+      "detector": "sequence_violation",
+      "area_id": "bed2",
+      "rule_id": "SEQ-001",
+      "target": "L12",
+      "note": "New drywall in bedroom 2 with no drywall removal billed there."
+    },
+    {
+      "job_id": "JOB-1004",
+      "detector": "sequence_violation",
+      "area_id": "bed1",
+      "rule_id": "SEQ-002",
+      "target": "L08",
+      "note": "Finish paint over new board in bedroom 1 with no sealer line."
+    },
+    {
+      "job_id": "JOB-1006",
+      "detector": "missing_required",
+      "area_id": "",
+      "rule_id": "REQ-005",
+      "target": "GEN-DEBRIS-HAUL",
+      "note": "Contaminated flooring and drywall removed with no disposal line billed."
+    },
+    {
+      "job_id": "JOB-1006",
+      "detector": "missing_required",
+      "area_id": "",
+      "rule_id": "REQ-009",
+      "target": "GEN-PPE-DAY",
+      "note": "Category 3 loss with three days of PPE in the notes and no PPE line billed."
+    },
+    {
+      "job_id": "JOB-1006",
+      "detector": "sequence_violation",
+      "area_id": "closet",
+      "rule_id": "SEQ-006",
+      "target": "L06",
+      "note": "Insulation pulled out of the closet wall with no drywall removal billed to open it."
+    },
+    {
+      "job_id": "JOB-1007",
+      "detector": "missing_required",
+      "area_id": "kitchen",
+      "rule_id": "REQ-010",
+      "target": "RBD-FLR-LAM",
+      "note": "Kitchen tile came out on a rebuild job and nothing replaces it."
+    },
+    {
+      "job_id": "JOB-1007",
+      "detector": "quantity_mismatch",
+      "area_id": "dining",
+      "rule_id": "QTY-001",
+      "target": "L12",
+      "note": "New drywall billed at 168 SF in the dining room where 104 SF came out."
+    },
+    {
+      "job_id": "JOB-1007",
+      "detector": "sequence_violation",
+      "area_id": "dining",
+      "rule_id": "SEQ-002",
+      "target": "L15",
+      "note": "Finish paint over new board in the dining room with no sealer billed."
+    },
+    {
+      "job_id": "JOB-1008",
+      "detector": "duplicate_scope",
+      "area_id": "kitchen_dining",
+      "rule_id": "none",
+      "target": "L02",
+      "note": "The same open room is measured twice under two names, so extraction is billed twice for one floor. Nothing in the pack reconciles two area records that describe one space."
+    },
+    {
+      "job_id": "JOB-1008",
+      "detector": "quantity_mismatch",
+      "area_id": "kitchen",
+      "rule_id": "none",
+      "target": "L05",
+      "note": "640 SF of containment barrier in a room with a 56 LF perimeter is not plausible. The pack assigns this code no quantity basis, so no rule can look at it."
+    },
+    {
+      "job_id": "JOB-1010",
+      "detector": "missing_required",
+      "area_id": "office",
+      "rule_id": "REQ-001",
+      "target": "MIT-EXT-STD",
+      "note": "Standing water in the scope and no extraction line anywhere on the estimate."
+    },
+    {
+      "job_id": "JOB-1010",
+      "detector": "sequence_violation",
+      "area_id": "office",
+      "rule_id": "SEQ-003",
+      "target": "L05",
+      "note": "Repaint with no sealer on a stained wall. Worth a question, not an error."
+    },
+    {
+      "job_id": "JOB-1011",
+      "detector": "missing_required",
+      "area_id": "kitchen",
+      "rule_id": "none",
+      "target": "CAB-DETACH-RESET",
+      "note": "The notes say three cabinets and a countertop have to come out to dry the wall. Nothing is billed for it. The pack has no cabinet or contents code at all, so no rule can find this."
+    },
+    {
+      "job_id": "JOB-1013",
+      "detector": "undocumented_area",
+      "area_id": "garage",
+      "rule_id": "DOC-001",
+      "target": "garage",
+      "note": "The garage carries scope and two billed lines and nobody photographed, scanned or wrote it up."
+    },
+    {
+      "job_id": "JOB-1013",
+      "detector": "unsupported_line",
+      "area_id": "garage",
+      "rule_id": "EVID-001",
+      "target": "L05",
+      "note": "Extraction billed in an area with no documentation at all."
+    },
+    {
+      "job_id": "JOB-1013",
+      "detector": "unsupported_line",
+      "area_id": "garage",
+      "rule_id": "EVID-001",
+      "target": "L06",
+      "note": "Final cleaning billed in an area with no documentation at all."
+    },
+    {
+      "job_id": "JOB-1013",
+      "detector": "unsupported_line",
+      "area_id": "mudroom",
+      "rule_id": "EVID-002",
+      "target": "L04",
+      "note": "Insulation removal billed and the mudroom photos never show the wall cavity or the insulation, which is the thing a carrier asks to see."
+    }
+  ]
+}

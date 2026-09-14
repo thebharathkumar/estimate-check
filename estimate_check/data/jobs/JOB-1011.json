@@ -1,0 +1,150 @@
+{
+  "job_id": "JOB-1011",
+  "description": "Slow leak behind a kitchen sink, cabinets involved, mitigation only",
+  "loss": {
+    "type": "water",
+    "water_category": 2,
+    "drying_class": 2,
+    "planned_drying_days": 4
+  },
+  "includes_rebuild": false,
+  "areas": [
+    {
+      "area_id": "kitchen",
+      "name": "Kitchen",
+      "floor_sf": 144.0,
+      "ceiling_sf": 144.0,
+      "perimeter_lf": 48.0,
+      "height_ft": 8.0,
+      "affected": {
+        "floor_sf": 96.0,
+        "wall_sf": 96.0,
+        "ceiling_sf": 0.0
+      },
+      "materials": {
+        "floor": "vinyl",
+        "wall": "drywall"
+      },
+      "scope": [
+        "water_extraction",
+        "dry_structure",
+        "cabinet_damage"
+      ],
+      "note": ""
+    }
+  ],
+  "documentation": [
+    {
+      "doc_id": "IMG-11001",
+      "kind": "photo",
+      "area_ids": [
+        "kitchen"
+      ],
+      "tags": [
+        "wet_floor",
+        "floor",
+        "wall",
+        "wet_drywall",
+        "flood_cut",
+        "staining",
+        "microbial_growth"
+      ]
+    },
+    {
+      "doc_id": "IMG-11002",
+      "kind": "photo",
+      "area_ids": [
+        "kitchen"
+      ],
+      "tags": [
+        "equipment",
+        "air_mover",
+        "dehumidifier"
+      ]
+    },
+    {
+      "doc_id": "MR-11001",
+      "kind": "moisture_reading",
+      "area_ids": [
+        "kitchen"
+      ],
+      "tags": [],
+      "text": "Sink base cabinet floor 40% WME. Wall behind the cabinet run wet to 14 inches."
+    },
+    {
+      "doc_id": "NOTE-11001",
+      "kind": "note",
+      "area_ids": [
+        "kitchen"
+      ],
+      "tags": [],
+      "text": "Drain leak ran for weeks behind the sink base. Category 2 by age. The sink base and the two cabinets either side have to come out to dry the wall behind them, and the countertop has to be detached to do it."
+    }
+  ],
+  "line_items": [
+    {
+      "line_id": "L01",
+      "code": "MIT-EXT-STD",
+      "area_id": "kitchen",
+      "quantity": 96.0,
+      "unit": "SF",
+      "unit_price": 0.72
+    },
+    {
+      "line_id": "L02",
+      "code": "DEMO-FLR-LAM",
+      "area_id": "kitchen",
+      "quantity": 96.0,
+      "unit": "SF",
+      "unit_price": 1.35
+    },
+    {
+      "line_id": "L03",
+      "code": "DEMO-DRY-2FT",
+      "area_id": "kitchen",
+      "quantity": 96.0,
+      "unit": "SF",
+      "unit_price": 1.85
+    },
+    {
+      "line_id": "L04",
+      "code": "TRT-ANTIMICRO",
+      "area_id": "kitchen",
+      "quantity": 192.0,
+      "unit": "SF",
+      "unit_price": 0.38
+    },
+    {
+      "line_id": "L05",
+      "code": "MIT-AIRMOVER-DAY",
+      "area_id": null,
+      "quantity": 8.0,
+      "unit": "EA-DAY",
+      "unit_price": 26.0
+    },
+    {
+      "line_id": "L06",
+      "code": "MIT-DEHU-DAY",
+      "area_id": null,
+      "quantity": 4.0,
+      "unit": "EA-DAY",
+      "unit_price": 78.0
+    },
+    {
+      "line_id": "L07",
+      "code": "MIT-MON-VISIT",
+      "area_id": null,
+      "quantity": 4.0,
+      "unit": "EA",
+      "unit_price": 65.0
+    },
+    {
+      "line_id": "L08",
+      "code": "GEN-DEBRIS-HAUL",
+      "area_id": null,
+      "quantity": 1.0,
+      "unit": "EA",
+      "unit_price": 145.0
+    }
+  ]
+}

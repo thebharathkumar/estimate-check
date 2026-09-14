@@ -1,0 +1,167 @@
+{
+  "job_id": "JOB-1010",
+  "description": "Window left open during a storm, rebuild included, extraction never billed",
+  "loss": {
+    "type": "water",
+    "water_category": 1,
+    "drying_class": 2,
+    "planned_drying_days": 3
+  },
+  "includes_rebuild": true,
+  "areas": [
+    {
+      "area_id": "office",
+      "name": "Home office",
+      "floor_sf": 132.0,
+      "ceiling_sf": 132.0,
+      "perimeter_lf": 46.0,
+      "height_ft": 8.0,
+      "affected": {
+        "floor_sf": 132.0,
+        "wall_sf": 0.0,
+        "ceiling_sf": 0.0
+      },
+      "materials": {
+        "floor": "carpet",
+        "wall": "drywall"
+      },
+      "scope": [
+        "standing_water",
+        "water_extraction",
+        "dry_structure"
+      ],
+      "note": ""
+    }
+  ],
+  "documentation": [
+    {
+      "doc_id": "IMG-10001",
+      "kind": "photo",
+      "area_ids": [
+        "office"
+      ],
+      "tags": [
+        "standing_water",
+        "saturated_carpet",
+        "carpet",
+        "floor",
+        "pad",
+        "wall",
+        "staining",
+        "baseboard"
+      ]
+    },
+    {
+      "doc_id": "IMG-10002",
+      "kind": "photo",
+      "area_ids": [
+        "office"
+      ],
+      "tags": [
+        "equipment",
+        "air_mover",
+        "dehumidifier"
+      ]
+    },
+    {
+      "doc_id": "MR-10001",
+      "kind": "moisture_reading",
+      "area_ids": [
+        "office"
+      ],
+      "tags": [],
+      "text": "Carpet and pad saturated along the window wall. Drywall reads dry above 6 inches."
+    },
+    {
+      "doc_id": "NOTE-10001",
+      "kind": "note",
+      "area_ids": [
+        "office"
+      ],
+      "tags": [],
+      "text": "Window left open through a storm. Carpet and pad are soaked. Walls are sound, they just need a repaint where the water stained them."
+    }
+  ],
+  "line_items": [
+    {
+      "line_id": "L01",
+      "code": "DEMO-FLR-CPT",
+      "area_id": "office",
+      "quantity": 132.0,
+      "unit": "SF",
+      "unit_price": 0.58
+    },
+    {
+      "line_id": "L02",
+      "code": "DEMO-FLR-PAD",
+      "area_id": "office",
+      "quantity": 132.0,
+      "unit": "SF",
+      "unit_price": 0.44
+    },
+    {
+      "line_id": "L03",
+      "code": "RBD-FLR-CPT",
+      "area_id": "office",
+      "quantity": 132.0,
+      "unit": "SF",
+      "unit_price": 3.75
+    },
+    {
+      "line_id": "L04",
+      "code": "RBD-FLR-PAD",
+      "area_id": "office",
+      "quantity": 132.0,
+      "unit": "SF",
+      "unit_price": 0.85
+    },
+    {
+      "line_id": "L05",
+      "code": "RBD-PNT-FIN",
+      "area_id": "office",
+      "quantity": 368.0,
+      "unit": "SF",
+      "unit_price": 0.95
+    },
+    {
+      "line_id": "L06",
+      "code": "MIT-AIRMOVER-DAY",
+      "area_id": null,
+      "quantity": 9.0,
+      "unit": "EA-DAY",
+      "unit_price": 26.0
+    },
+    {
+      "line_id": "L07",
+      "code": "MIT-DEHU-DAY",
+      "area_id": null,
+      "quantity": 3.0,
+      "unit": "EA-DAY",
+      "unit_price": 78.0
+    },
+    {
+      "line_id": "L08",
+      "code": "MIT-MON-VISIT",
+      "area_id": null,
+      "quantity": 3.0,
+      "unit": "EA",
+      "unit_price": 65.0
+    },
+    {
+      "line_id": "L09",
+      "code": "GEN-DEBRIS-HAUL",
+      "area_id": null,
+      "quantity": 1.0,
+      "unit": "EA",
+      "unit_price": 145.0
+    },
+    {
+      "line_id": "L10",
+      "code": "GEN-CLEAN-FINAL",
+      "area_id": "office",
+      "quantity": 132.0,
+      "unit": "SF",
+      "unit_price": 0.42
+    }
+  ]
+}

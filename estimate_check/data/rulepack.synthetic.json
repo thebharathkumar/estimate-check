@@ -1,0 +1,554 @@
+{
+  "rulepack_id": "synthetic-water-v0",
+  "version": "0.1.0",
+  "title": "Synthetic water damage rule pack",
+  "provenance": "Invented for this repository. The line codes are generic and made up. They are not Xactimate codes and this is not any carrier's rule set. The rules are modelled loosely on publicly documented water damage remediation practice (extract, remove wet material, treat, dry, monitor, rebuild) and the numeric constants below were chosen to make the demonstration legible, not from field data. Real packs are carrier specific, negotiated, and proprietary. Treat every rule here as a placeholder for one a restoration contractor would give you.",
+  "constants": {
+    "sf_per_airmover": 60.0,
+    "cuft_per_dehumidifier": 1200.0,
+    "flood_cut_height_2ft": 2.0,
+    "flood_cut_height_4ft": 4.0
+  },
+  "codes": {
+    "MIT-EXT-STD": {
+      "label": "Water extraction, standard",
+      "phase": "mitigation",
+      "unit": "SF",
+      "basis": "affected_floor_sf",
+      "tolerance": 0.1,
+      "duplicate_group": "extraction",
+      "evidence_any_of": [
+        {"kind": "photo", "tags_any": ["standing_water", "wet_floor", "saturated_carpet"]},
+        {"kind": "moisture_reading"}
+      ]
+    },
+    "MIT-EXT-HVY": {
+      "label": "Water extraction, heavy or weighted",
+      "phase": "mitigation",
+      "unit": "SF",
+      "basis": "affected_floor_sf",
+      "tolerance": 0.1,
+      "duplicate_group": "extraction",
+      "evidence_any_of": [
+        {"kind": "photo", "tags_any": ["standing_water", "saturated_carpet"]},
+        {"kind": "moisture_reading"}
+      ]
+    },
+    "MIT-AIRMOVER-DAY": {
+      "label": "Air mover, per unit per day",
+      "phase": "mitigation",
+      "unit": "EA-DAY",
+      "basis": "airmover_unit_days",
+      "tolerance": 0.25,
+      "duplicate_group": null,
+      "evidence_any_of": [
+        {"kind": "photo", "tags_any": ["equipment", "air_mover"]},
+        {"kind": "note", "text_any": ["air mover", "airmover", "equipment set"]}
+      ],
+      "note": "Unit count is derived from affected floor area over sf_per_airmover. Real placement also counts wall and ceiling surfaces and the drying class. The constant is invented."
+    },
+    "MIT-DEHU-DAY": {
+      "label": "Dehumidifier, per unit per day",
+      "phase": "mitigation",
+      "unit": "EA-DAY",
+      "basis": "dehu_unit_days",
+      "tolerance": 0.25,
+      "duplicate_group": null,
+      "evidence_any_of": [
+        {"kind": "photo", "tags_any": ["equipment", "dehumidifier"]},
+        {"kind": "note", "text_any": ["dehu", "dehumidifier", "equipment set"]}
+      ],
+      "note": "Unit count is derived from affected volume over cuft_per_dehumidifier. Real sizing depends on equipment class and grains of moisture. The constant is invented."
+    },
+    "MIT-AFD-DAY": {
+      "label": "Air filtration device, per unit per day",
+      "phase": "mitigation",
+      "unit": "EA-DAY",
+      "basis": "none",
+      "tolerance": 0.25,
+      "duplicate_group": null,
+      "evidence_any_of": [
+        {"kind": "photo", "tags_any": ["equipment", "air_scrubber"]},
+        {"kind": "note", "text_any": ["air scrubber", "afd", "negative air"]}
+      ],
+      "note": "No quantity basis. Device count depends on containment layout, which this pack does not model."
+    },
+    "MIT-MON-VISIT": {
+      "label": "Drying monitoring visit",
+      "phase": "mitigation",
+      "unit": "EA",
+      "basis": "drying_days",
+      "tolerance": 0.34,
+      "duplicate_group": null,
+      "evidence_any_of": [
+        {"kind": "moisture_reading"},
+        {"kind": "note", "text_any": ["monitor", "reading", "psychrometric"]}
+      ]
+    },
+    "TRT-ANTIMICRO": {
+      "label": "Antimicrobial application",
+      "phase": "mitigation",
+      "unit": "SF",
+      "basis": "affected_floor_plus_wall_sf",
+      "tolerance": 0.15,
+      "duplicate_group": "antimicrobial",
+      "evidence_any_of": [
+        {"kind": "photo", "tags_any": ["contamination", "staining", "sewage", "microbial_growth"]},
+        {"kind": "note", "text_any": ["category 2", "category 3", "grey water", "black water", "antimicrobial"]}
+      ]
+    },
+    "DEMO-FLR-CPT": {
+      "label": "Carpet removal and disposal",
+      "phase": "demolition",
+      "unit": "SF",
+      "basis": "affected_floor_sf",
+      "tolerance": 0.1,
+      "duplicate_group": "floor_removal",
+      "evidence_any_of": [
+        {"kind": "photo", "tags_any": ["carpet", "saturated_carpet", "floor"]}
+      ]
+    },
+    "DEMO-FLR-PAD": {
+      "label": "Carpet pad removal and disposal",
+      "phase": "demolition",
+      "unit": "SF",
+      "basis": "affected_floor_sf",
+      "tolerance": 0.1,
+      "duplicate_group": "pad_removal",
+      "evidence_any_of": [
+        {"kind": "photo", "tags_any": ["carpet", "pad", "saturated_carpet", "floor"]}
+      ]
+    },
+    "DEMO-FLR-LAM": {
+      "label": "Laminate or wood floor removal and disposal",
+      "phase": "demolition",
+      "unit": "SF",
+      "basis": "affected_floor_sf",
+      "tolerance": 0.1,
+      "duplicate_group": "floor_removal",
+      "evidence_any_of": [
+        {"kind": "photo", "tags_any": ["laminate", "wood_floor", "buckled_floor", "floor"]}
+      ]
+    },
+    "DEMO-FLR-TILE": {
+      "label": "Tile floor removal and disposal",
+      "phase": "demolition",
+      "unit": "SF",
+      "basis": "affected_floor_sf",
+      "tolerance": 0.1,
+      "duplicate_group": "floor_removal",
+      "evidence_any_of": [
+        {"kind": "photo", "tags_any": ["tile", "floor"]}
+      ]
+    },
+    "DEMO-DRY-2FT": {
+      "label": "Drywall removal, 2 ft flood cut",
+      "phase": "demolition",
+      "unit": "SF",
+      "basis": "flood_cut_2ft_sf",
+      "tolerance": 0.1,
+      "duplicate_group": "drywall_removal",
+      "evidence_any_of": [
+        {"kind": "photo", "tags_any": ["wet_drywall", "flood_cut", "wall"]},
+        {"kind": "moisture_reading"}
+      ]
+    },
+    "DEMO-DRY-4FT": {
+      "label": "Drywall removal, 4 ft flood cut",
+      "phase": "demolition",
+      "unit": "SF",
+      "basis": "flood_cut_4ft_sf",
+      "tolerance": 0.1,
+      "duplicate_group": "drywall_removal",
+      "evidence_any_of": [
+        {"kind": "photo", "tags_any": ["wet_drywall", "flood_cut", "wall"]},
+        {"kind": "moisture_reading"}
+      ]
+    },
+    "DEMO-DRY-FULL": {
+      "label": "Drywall removal, full height",
+      "phase": "demolition",
+      "unit": "SF",
+      "basis": "affected_wall_sf",
+      "tolerance": 0.1,
+      "duplicate_group": "drywall_removal",
+      "evidence_any_of": [
+        {"kind": "photo", "tags_any": ["wet_drywall", "ceiling_collapse", "wall"]},
+        {"kind": "moisture_reading"}
+      ]
+    },
+    "DEMO-INSUL": {
+      "label": "Wet insulation removal and disposal",
+      "phase": "demolition",
+      "unit": "SF",
+      "basis": "affected_wall_sf",
+      "tolerance": 0.15,
+      "duplicate_group": null,
+      "evidence_any_of": [
+        {"kind": "photo", "tags_any": ["insulation", "wet_insulation", "wall_cavity"]}
+      ]
+    },
+    "DEMO-BASE": {
+      "label": "Baseboard removal",
+      "phase": "demolition",
+      "unit": "LF",
+      "basis": "perimeter_lf",
+      "tolerance": 0.1,
+      "duplicate_group": "baseboard_removal",
+      "evidence_any_of": [
+        {"kind": "photo", "tags_any": ["baseboard", "wall", "flood_cut"]}
+      ]
+    },
+    "RBD-DRY-HANG": {
+      "label": "Drywall hang, tape and float",
+      "phase": "rebuild",
+      "unit": "SF",
+      "basis": "matches_removed_wall_sf",
+      "tolerance": 0.1,
+      "duplicate_group": "drywall_install",
+      "evidence_any_of": [
+        {"kind": "photo", "tags_any": ["wet_drywall", "flood_cut", "wall"]},
+        {"kind": "note", "text_any": ["rebuild", "replace drywall"]}
+      ]
+    },
+    "RBD-PNT-SEAL": {
+      "label": "Sealer or primer, walls",
+      "phase": "rebuild",
+      "unit": "SF",
+      "basis": "wall_sf",
+      "tolerance": 0.1,
+      "duplicate_group": "primer",
+      "evidence_any_of": [
+        {"kind": "photo", "tags_any": ["wall", "wet_drywall", "staining"]},
+        {"kind": "note", "text_any": ["paint", "primer", "seal"]}
+      ]
+    },
+    "RBD-PNT-FIN": {
+      "label": "Paint, finish coat, walls",
+      "phase": "rebuild",
+      "unit": "SF",
+      "basis": "wall_sf",
+      "tolerance": 0.1,
+      "duplicate_group": "paint_finish",
+      "evidence_any_of": [
+        {"kind": "photo", "tags_any": ["wall", "wet_drywall", "staining"]},
+        {"kind": "note", "text_any": ["paint", "repaint"]}
+      ]
+    },
+    "RBD-BASE": {
+      "label": "Baseboard install and finish",
+      "phase": "rebuild",
+      "unit": "LF",
+      "basis": "perimeter_lf",
+      "tolerance": 0.1,
+      "duplicate_group": "baseboard_install",
+      "evidence_any_of": [
+        {"kind": "photo", "tags_any": ["baseboard", "wall"]},
+        {"kind": "note", "text_any": ["baseboard", "trim"]}
+      ]
+    },
+    "RBD-FLR-LAM": {
+      "label": "Laminate floor install",
+      "phase": "rebuild",
+      "unit": "SF",
+      "basis": "floor_sf",
+      "tolerance": 0.1,
+      "duplicate_group": "floor_install",
+      "evidence_any_of": [
+        {"kind": "photo", "tags_any": ["laminate", "wood_floor", "floor"]},
+        {"kind": "note", "text_any": ["replace floor", "reinstall floor"]}
+      ],
+      "note": "Basis is the full floor area of the room, not the affected area, because flooring is normally replaced wall to wall. This pack carries no waste factor allowance. See README limitations."
+    },
+    "RBD-FLR-CPT": {
+      "label": "Carpet install",
+      "phase": "rebuild",
+      "unit": "SF",
+      "basis": "floor_sf",
+      "tolerance": 0.1,
+      "duplicate_group": "floor_install",
+      "evidence_any_of": [
+        {"kind": "photo", "tags_any": ["carpet", "floor"]},
+        {"kind": "note", "text_any": ["replace carpet", "recarpet"]}
+      ],
+      "note": "This pack carries no waste factor allowance. See README limitations."
+    },
+    "RBD-FLR-PAD": {
+      "label": "Carpet pad install",
+      "phase": "rebuild",
+      "unit": "SF",
+      "basis": "floor_sf",
+      "tolerance": 0.1,
+      "duplicate_group": "pad_install",
+      "evidence_any_of": [
+        {"kind": "photo", "tags_any": ["carpet", "pad", "floor"]},
+        {"kind": "note", "text_any": ["replace pad", "new pad"]}
+      ]
+    },
+    "GEN-DEBRIS-HAUL": {
+      "label": "Debris haul and disposal",
+      "phase": "general",
+      "unit": "EA",
+      "basis": "none",
+      "tolerance": 0.5,
+      "duplicate_group": "debris",
+      "evidence_any_of": [
+        {"kind": "any"}
+      ],
+      "note": "No quantity basis. Load count depends on material volume and dump access, which this pack does not model."
+    },
+    "GEN-CLEAN-FINAL": {
+      "label": "Final cleaning",
+      "phase": "general",
+      "unit": "SF",
+      "basis": "floor_sf",
+      "tolerance": 0.15,
+      "duplicate_group": "final_clean",
+      "evidence_any_of": [
+        {"kind": "any"}
+      ]
+    },
+    "GEN-PPE-DAY": {
+      "label": "Personal protective equipment and consumables, per day",
+      "phase": "general",
+      "unit": "DAY",
+      "basis": "drying_days",
+      "tolerance": 0.34,
+      "duplicate_group": "ppe",
+      "evidence_any_of": [
+        {"kind": "any"}
+      ]
+    },
+    "GEN-CONTAIN-BARRIER": {
+      "label": "Containment barrier, temporary",
+      "phase": "general",
+      "unit": "SF",
+      "basis": "none",
+      "tolerance": 0.25,
+      "duplicate_group": "containment",
+      "evidence_any_of": [
+        {"kind": "photo", "tags_any": ["containment", "barrier", "poly"]},
+        {"kind": "note", "text_any": ["containment", "barrier", "poly"]}
+      ],
+      "note": "No quantity basis. Barrier area depends on opening geometry, which this pack does not capture. Quantity on this code is never checked, which is a known blind spot."
+    }
+  },
+  "evidence_rules": [
+    {
+      "rule_id": "EVID-001",
+      "title": "Billed line with no documentation covering its area",
+      "detector": "unsupported_line",
+      "severity": "high",
+      "reason": "The line is billed against an area that has no photo, note, scan or moisture reading attached to it at all."
+    },
+    {
+      "rule_id": "EVID-002",
+      "title": "Billed line with area documentation but nothing matching the code requirement",
+      "detector": "unsupported_line",
+      "severity": "medium",
+      "ambiguous": true,
+      "reason": "The area is documented, but nothing in it matches what the rule pack asks for on this code. Field tagging is unreliable, so this is flagged for review rather than treated as settled.",
+      "note": "This is the rule most likely to be wrong in the field. See NOTES.md question 6."
+    }
+  ],
+  "quantity_rules": [
+    {
+      "rule_id": "QTY-001",
+      "title": "Quantity contradicts the measurement basis for the code",
+      "detector": "quantity_mismatch",
+      "reason": "Billed quantity is outside the tolerance band around the basis this rule pack assigns to the code."
+    },
+    {
+      "rule_id": "QTY-002",
+      "title": "Unit of measure does not match the code",
+      "detector": "quantity_mismatch",
+      "severity": "medium",
+      "reason": "The line is billed in a unit the rule pack does not use for this code."
+    }
+  ],
+  "duplicate_rules": [
+    {
+      "rule_id": "DUP-001",
+      "title": "Same code billed twice in the same area",
+      "detector": "duplicate_scope",
+      "severity": "high",
+      "reason": "Two line items carry the same code against the same area."
+    },
+    {
+      "rule_id": "DUP-002",
+      "title": "Two codes from one exclusive group billed in the same area",
+      "detector": "duplicate_scope",
+      "severity": "high",
+      "reason": "Two line items in the same exclusivity group bill the same physical work in one area."
+    }
+  ],
+  "sequence_rules": [
+    {
+      "rule_id": "SEQ-001",
+      "title": "Drywall replacement without a drywall removal",
+      "code_any": ["RBD-DRY-HANG"],
+      "requires_any": ["DEMO-DRY-2FT", "DEMO-DRY-4FT", "DEMO-DRY-FULL"],
+      "scope": "area",
+      "severity": "high",
+      "reason": "New drywall is billed in this area but no drywall removal is billed for it."
+    },
+    {
+      "rule_id": "SEQ-002",
+      "title": "Finish paint over new drywall without a sealer or primer",
+      "code_any": ["RBD-PNT-FIN"],
+      "requires_any": ["RBD-PNT-SEAL"],
+      "when_area_has_any": ["RBD-DRY-HANG"],
+      "scope": "area",
+      "severity": "high",
+      "reason": "Finish paint is billed over newly hung drywall in this area with no sealer or primer line."
+    },
+    {
+      "rule_id": "SEQ-003",
+      "title": "Finish paint on existing wall without a sealer or primer",
+      "code_any": ["RBD-PNT-FIN"],
+      "requires_any": ["RBD-PNT-SEAL"],
+      "when_area_lacks_all": ["RBD-DRY-HANG"],
+      "scope": "area",
+      "severity": "low",
+      "ambiguous": true,
+      "reason": "Finish paint is billed with no sealer or primer line. On a sound existing surface that can be correct, so this is raised for review rather than as an error."
+    },
+    {
+      "rule_id": "SEQ-004",
+      "title": "Floor covering installed without a floor covering removal",
+      "code_any": ["RBD-FLR-LAM", "RBD-FLR-CPT", "RBD-FLR-PAD"],
+      "requires_any": ["DEMO-FLR-CPT", "DEMO-FLR-PAD", "DEMO-FLR-LAM", "DEMO-FLR-TILE"],
+      "scope": "area",
+      "severity": "high",
+      "reason": "New floor covering is billed in this area but no floor covering removal is billed for it."
+    },
+    {
+      "rule_id": "SEQ-005",
+      "title": "Baseboard installed without a baseboard removal",
+      "code_any": ["RBD-BASE"],
+      "requires_any": ["DEMO-BASE"],
+      "scope": "area",
+      "severity": "medium",
+      "reason": "New baseboard is billed in this area but no baseboard removal is billed for it."
+    },
+    {
+      "rule_id": "SEQ-006",
+      "title": "Insulation removal without opening the wall",
+      "code_any": ["DEMO-INSUL"],
+      "requires_any": ["DEMO-DRY-2FT", "DEMO-DRY-4FT", "DEMO-DRY-FULL"],
+      "scope": "area",
+      "severity": "high",
+      "reason": "Wet insulation removal is billed in this area but no drywall removal is billed to open the cavity."
+    }
+  ],
+  "required_rules": [
+    {
+      "rule_id": "REQ-001",
+      "title": "Area scoped for extraction with no extraction line",
+      "scope": "area",
+      "when": {"area_scope_any": ["standing_water", "water_extraction"]},
+      "expect_any": ["MIT-EXT-STD", "MIT-EXT-HVY"],
+      "severity": "high",
+      "reason": "The area scope records water to be extracted and no extraction line is billed for it."
+    },
+    {
+      "rule_id": "REQ-002",
+      "title": "Category 2 or 3 loss with material removal and no antimicrobial",
+      "scope": "area",
+      "when": {"water_category_min": 2, "area_has_code_prefix_any": ["DEMO-"]},
+      "expect_any": ["TRT-ANTIMICRO"],
+      "severity": "high",
+      "reason": "This pack pairs a category 2 or higher loss that required material removal with an antimicrobial application in the same area."
+    },
+    {
+      "rule_id": "REQ-003",
+      "title": "Structural drying with no dehumidification",
+      "scope": "job",
+      "when": {"drying_class_min": 2},
+      "expect_any": ["MIT-DEHU-DAY"],
+      "severity": "high",
+      "reason": "The job is classed for structural drying and no dehumidifier line is billed."
+    },
+    {
+      "rule_id": "REQ-004",
+      "title": "Drying equipment with no monitoring visits",
+      "scope": "job",
+      "when": {"job_has_code_any": ["MIT-AIRMOVER-DAY", "MIT-DEHU-DAY"]},
+      "expect_any": ["MIT-MON-VISIT"],
+      "severity": "medium",
+      "reason": "Equipment days are billed with no monitoring visit line. This pack expects the readings that justify the equipment days to be billed alongside them."
+    },
+    {
+      "rule_id": "REQ-005",
+      "title": "Material removal with no debris disposal",
+      "scope": "job",
+      "when": {"job_has_code_prefix_any": ["DEMO-"]},
+      "expect_any": ["GEN-DEBRIS-HAUL"],
+      "severity": "medium",
+      "reason": "Material was removed and no debris haul or disposal line is billed. This is money the contractor spent and did not bill."
+    },
+    {
+      "rule_id": "REQ-006",
+      "title": "Carpet removed without the pad under it",
+      "scope": "area",
+      "when": {"area_has_code_any": ["DEMO-FLR-CPT"]},
+      "expect_any": ["DEMO-FLR-PAD"],
+      "severity": "medium",
+      "reason": "Carpet removal is billed in this area with no pad removal. Pad under wet carpet is normally removed with it and is commonly missed on the estimate."
+    },
+    {
+      "rule_id": "REQ-007",
+      "title": "Drywall removed on a rebuild job with no drywall replacement",
+      "scope": "area",
+      "when": {"includes_rebuild": true, "area_has_code_prefix_any": ["DEMO-DRY-"]},
+      "expect_any": ["RBD-DRY-HANG"],
+      "severity": "high",
+      "reason": "This job carries rebuild scope and drywall was removed in this area with nothing billed to put it back."
+    },
+    {
+      "rule_id": "REQ-008",
+      "title": "Baseboard removed on a rebuild job with no baseboard replacement",
+      "scope": "area",
+      "when": {"includes_rebuild": true, "area_has_code_any": ["DEMO-BASE"]},
+      "expect_any": ["RBD-BASE"],
+      "severity": "medium",
+      "reason": "This job carries rebuild scope and baseboard was removed in this area with nothing billed to put it back."
+    },
+    {
+      "rule_id": "REQ-009",
+      "title": "Category 3 loss with no protective equipment line",
+      "scope": "job",
+      "when": {"water_category_min": 3},
+      "expect_any": ["GEN-PPE-DAY"],
+      "severity": "medium",
+      "reason": "A category 3 loss is billed with no protective equipment or consumables line."
+    },
+    {
+      "rule_id": "REQ-010",
+      "title": "Floor covering removed on a rebuild job with no replacement",
+      "scope": "area",
+      "when": {"includes_rebuild": true, "area_has_code_prefix_any": ["DEMO-FLR-"]},
+      "expect_any": ["RBD-FLR-LAM", "RBD-FLR-CPT", "RBD-FLR-PAD"],
+      "severity": "high",
+      "reason": "This job carries rebuild scope and floor covering was removed in this area with nothing billed to replace it."
+    },
+    {
+      "rule_id": "REQ-011",
+      "title": "Rebuild scope with no final cleaning",
+      "scope": "job",
+      "when": {"job_has_code_prefix_any": ["RBD-"]},
+      "expect_any": ["GEN-CLEAN-FINAL"],
+      "severity": "low",
+      "reason": "Rebuild work is billed with no final cleaning line."
+    }
+  ],
+  "documentation_rules": [
+    {
+      "rule_id": "DOC-001",
+      "title": "Area in scope with no documentation of any kind",
+      "detector": "undocumented_area",
+      "severity": "high",
+      "reason": "This area carries scope, measurements or billed lines and has no photo, note, scan or moisture reading attached to it."
+    }
+  ]
+}
